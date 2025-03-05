@@ -1,19 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+//import React from 'react';
+import { createRoot } from 'react-dom/client';
+//import el from './01-r-css/slide';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+//import el from './react-boot/react_boot';
+import 'bootstrap/dist/css/bootstrap.min.css';
+//import finalEL from './react-fragment/react-frag'; 
+//import el from './react-component/slide-element';
+//import el from './05-props-react/slide-demo';
+//import el from './06-react-state/05-props-react/slide-demo';
+import App from './07-events/events-demo';
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+const rootElement = document.getElementById('root') as HTMLElement;
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+if (rootElement) {
+    const root = createRoot(rootElement);
+    root.render(<App />);
+} else {
+    console.error('Root element not found');
+}
